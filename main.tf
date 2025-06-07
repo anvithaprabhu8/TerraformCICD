@@ -8,7 +8,7 @@ terraform {
 }
 provider "aws" {
   profile = "default"
-  region = "us-east-1"
+  region = var.aws_region
 }
 
 
@@ -34,8 +34,8 @@ resource "aws_subnet" "terraform_cicd_subnet" {
 }
 
 resource "aws_instance" "terraform_cicd_ec2" {
-  ami           = "ami-0953476d60561c955"
-  instance_type = "t2.micro"
+  ami           = var.aws_ami
+  instance_type = var.aws_instance_type
   subnet_id     = aws_subnet.terraform_cicd_subnet.id
   
   tags = {
