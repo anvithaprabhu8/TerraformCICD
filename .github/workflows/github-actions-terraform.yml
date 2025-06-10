@@ -52,7 +52,7 @@ jobs:
       - name: Terraform plan
         id: plan
         if: github.event_name == 'pull_request'
-        run: terraform plan  -input=false
+        run: terraform plan -input=false
 
       - name: Terraform comment
         id: comment
@@ -77,6 +77,9 @@ jobs:
             *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
             
             await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: github.repo.owner,
+              repo: github.repo.repo,
               body: output
             })
 
