@@ -65,7 +65,7 @@ jobs:
             const output = `
             #### Terraform Init \`${{ steps.init.outcome }}\`
             #### Terraform Validation \`${{ steps.validate.outcome }}\`
-            #### Terraform Plan \`${{ steps.plan.outcome }}\` `
+            #### Terraform Plan \`${{ steps.plan.outcome }}\`
 
             <details><summary>Show Plan</summary>
 
