@@ -17,7 +17,6 @@ resource "aws_vpc" "terraform_cicd_vpc" {
   tags = {
     Name = "terraform_cicd_vpc"
   }  
-
 }
 
 
@@ -29,7 +28,6 @@ resource "aws_subnet" "terraform_cicd_subnet" {
   tags = {
     Name = "terraform_cicd_subnet"
   }
-
 }
 
 resource "aws_instance" "terraform_cicd_ec2" {
@@ -40,5 +38,4 @@ resource "aws_instance" "terraform_cicd_ec2" {
   tags = {
     Name = "terraform_cicd_ec2"
   }
-
 }
