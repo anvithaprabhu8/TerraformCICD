@@ -28,6 +28,7 @@ resource "aws_subnet" "terraform_cicd_subnet" {
   tags = {
     Name = "terraform_cicd_subnet"
   }
+  
 }
 
 resource "aws_instance" "terraform_cicd_ec2" {
